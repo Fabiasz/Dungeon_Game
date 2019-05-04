@@ -5,37 +5,30 @@ using UnityEngine;
 public class EnemyBoltCollision : MonoBehaviour
 {
     bool isRotate = false;
-    GameObject player;
-    Transform target;
+    bool isVelocity = false;
+    Transform player;
+    Vector2 target;
     [SerializeField] float projectileSpeed = 1f;
     private void Start()
     {
-       player = GameObject.FindGameObjectWithTag("Player");
+       player = GameObject.FindGameObjectWithTag("Player").transform;
+        target = new Vector2(player.transform.position.x, player.transform.position.y);
+        transform.Rotate(0.0f, 0.0f, Mathf.Atan2(player.position.y, player.position.x) * Mathf.Rad2Deg);
     }
     private void Update()
     {
-        //Physics2D.IgnoreLayerCollision(12, 10);
-        
-        target = player.transform;
-        if (isRotate)
-        {
-            transform.Rotate(0.0f, 0.0f, Mathf.Atan2(target.position.y, target.position.x) * Mathf.Rad2Deg);
-            isRotate = true;
-        }
-
-       // GetComponent<Rigidbody2D>().velocity = projectileSpeed*5 * Time.deltaTime * target.position;
-        Debug.Log(target.position.ToString());
         transform.position = Vector2.MoveTowards(transform.position,
-         target.position, projectileSpeed * Time.deltaTime);
+         target , projectileSpeed * Time.deltaTime);
+        if(new Vector2(transform.position.x , transform.position.y ) == target)
+        {
+            GetComponent<Rigidbody2D>().velocity = target * 10;
+        }
 
         
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
 

@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923f6f1c65b8eeb43a3c8b11909f001b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starttimebeetweenShots: 2
+  starttimebeetweenShots: 0.01
+  projectileSpeed: 20
   boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
     type: 3}
