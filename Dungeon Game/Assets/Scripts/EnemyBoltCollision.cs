@@ -14,6 +14,7 @@ public class EnemyBoltCollision : MonoBehaviour
        player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.transform.position.x, player.transform.position.y);
         transform.Rotate(0.0f, 0.0f, Mathf.Atan2(player.position.y, player.position.x) * Mathf.Rad2Deg);
+        Destroy(gameObject, 5f);
     }
     private void Update()
     {
@@ -23,6 +24,7 @@ public class EnemyBoltCollision : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = target * 10;
         }
+
 
         
     }
