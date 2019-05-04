@@ -27,8 +27,8 @@ public class EnemyPathing : MonoBehaviour
         if (waypointIndex < wayPoints.Count - 1)
         {
             var targetPos = wayPoints[waypointIndex].transform.position;
-            Debug.Log(targetPos.ToString());
-            Debug.Log("thid" + transform.position.ToString());
+           // Debug.Log(targetPos.ToString());
+            //Debug.Log("thid" + transform.position.ToString());
 
             var moveFrame = waveConfig.GetSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPos, moveFrame);

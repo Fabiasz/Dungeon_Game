@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+       
         transform.position = new Vector3((player.position.x + crossHair.position.x) / 2, (player.position.y + crossHair.position.y) / 2,
             transform.position.z);
     }
