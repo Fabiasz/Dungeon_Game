@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6568640099907047768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6568640099907047770}
+  - component: {fileID: 6568640099907047771}
+  m_Layer: 0
+  m_Name: Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6568640099907047770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568640099907047768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6568640099907047771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568640099907047768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2d8de806084c548a7c11f06fd0ba61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanceWalkerChangeDir: 0.5
+  chanceWalkerSpawn: 0.05
+  chanceWalkerDestroy: 0.05
+  percentToFill: 0.2
+  wallObject: {fileID: 5277761146085241941, guid: 15daacbab38ddd04188f6728639cd472,
+    type: 3}
+  floorObject: {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8,
+    type: 3}
+  playerObject: {fileID: 6639722452393616992, guid: 663b4b230a31a3146a134a84e3ad6d6b,
+    type: 3}
+  enemy1Object: {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01,
+    type: 3}
+  enemy2Object: {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01,
+    type: 3}

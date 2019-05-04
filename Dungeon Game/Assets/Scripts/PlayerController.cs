@@ -9,26 +9,43 @@ public class PlayerController : MonoBehaviour
     public GameObject crossHair;
     public GameObject boltPrefab;
     private float boltCooldown = 0;
+    private Rigidbody2D rb;
+    private Vector3 currentMovement;
 
     public float movementSpeed;
+    public float boltVelocity = 7.0f;
 
 
-    void Update()
+    private void Start()
     {
-        MoveCharacter();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        currentMovement = MoveCharacter();
         AimAndShoot();
     }
 
+    private void FixedUpdate()
+    {
+        PhysicsMoveCharacter();
+    }
 
+    private void PhysicsMoveCharacter()
+    {
+        transform.position += currentMovement;
+    }
 
-    private void MoveCharacter()
+    private Vector3 MoveCharacter()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        movement.Normalize();
+        //movement.Normalize();
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
 
-        transform.position += movement * movementSpeed * Time.deltaTime;
+        //GetComponent<Rigidbody2D>().velocity = movement * movementSpeed;
+        return movement * movementSpeed * Time.deltaTime;
     }
 
     private void AimAndShoot()
@@ -42,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") && boltCooldown <= 0)
         {
             GameObject bolt = Instantiate(boltPrefab, transform.position, Quaternion.identity);
-            bolt.GetComponent<Rigidbody2D>().velocity = 7.0f * aimDirection;
+            bolt.GetComponent<Rigidbody2D>().velocity = boltVelocity * aimDirection;
             bolt.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg);
             Destroy(bolt, 1.35f);
             boltCooldown = 0.2f;
