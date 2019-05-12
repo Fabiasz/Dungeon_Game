@@ -35,6 +35,7 @@ public class LevelGenerator : MonoBehaviour
     {
         Setup();
         CreateFloors();
+        CreateSafetyZone();
         CreateWalls();
         SpawnLevel();
     }
@@ -147,6 +148,32 @@ public class LevelGenerator : MonoBehaviour
             }
             iterations++;
         } while (iterations < 100000);
+
+    }
+
+    private void CreateSafetyZone()
+    {
+        int playerPositionX = Mathf.RoundToInt(roomWidth / 2.0f);
+        int playerPositionY = Mathf.RoundToInt(roomHeight / 2.0f);
+
+        for(int x = playerPositionX-1; x<= playerPositionX+1; x++)
+        {
+            for (int y = playerPositionY - 1; y <= playerPositionY + 1; y++)
+            {
+                grid[x, y] = gridSpace.floor;
+            }
+        }
+
+        for (int x = playerPositionX - 2; x <= playerPositionX + 2; x++)
+        {
+            for (int y = playerPositionY - 2; y <= playerPositionY + 2; y++)
+            {
+                if(units[x, y] != gridUnits.player)
+                {
+                    units[x, y] = gridUnits.empty;
+                }
+            }
+        }
 
     }
 
