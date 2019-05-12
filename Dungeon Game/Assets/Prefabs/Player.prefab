@@ -90,9 +90,10 @@ GameObject:
   - component: {fileID: 6639722452393617005}
   - component: {fileID: 6639722452393617006}
   - component: {fileID: 6639722452393617007}
-  - component: {fileID: 6639722452393617004}
   - component: {fileID: 6038964661107838585}
   - component: {fileID: 3537782817887019842}
+  - component: {fileID: 6639722452393617004}
+  - component: {fileID: 2826247925814070923}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -182,24 +183,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6639722452393617004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6639722452393616992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8979bb62be9a4904a8dc5421495011d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 6639722452393617007}
-  crossHair: {fileID: 6225756217371608609}
-  boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
-    type: 3}
-  movementSpeed: 6
-  boltVelocity: 9
 --- !u!61 &6038964661107838585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,3 +230,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &6639722452393617004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639722452393616992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979bb62be9a4904a8dc5421495011d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6639722452393617007}
+  crossHair: {fileID: 6225756217371608609}
+  boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
+    type: 3}
+  movementSpeed: 6
+  boltVelocity: 10
+--- !u!114 &2826247925814070923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639722452393616992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcfb4096c520ec49903f2c771556165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

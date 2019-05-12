@@ -7,6 +7,10 @@ public class CameraFollow : MonoBehaviour
     public Transform player;
     public Transform crossHair;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
 
     void Update()
     {
