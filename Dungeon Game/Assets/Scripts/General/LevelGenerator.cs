@@ -29,7 +29,7 @@ public class LevelGenerator : MonoBehaviour
     int maxWalkers = 10;
     [Range(0.0f, 1.0f)]
     public float percentToFill = 0.2f;
-    public GameObject wallObject, floorObject, playerObject, enemy1Object, enemy2Object;
+    public GameObject wallObject, floorObject, playerObject, enemy1Object, enemy2Object, portalObject;
 
     private void Start()
     {
@@ -270,6 +270,7 @@ public class LevelGenerator : MonoBehaviour
                     case gridUnits.player:
                         //Debug.Log( "(" + x + "," + y + "): player");
                         //MoveObject(x, y, playerObject);
+                        Spawn(x, y, portalObject);
                         break;
                     case gridUnits.enemy1:
                         //Debug.Log("(" + x + "," + y + "): wall");
