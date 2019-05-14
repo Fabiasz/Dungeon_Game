@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float mana;
     public float manaRegen = 20f;
-    public float movementSpeed;
+    public float movementSpeed = 6f;
 
     private void Awake()
     {
@@ -26,5 +27,24 @@ public class PlayerStats : MonoBehaviour
         {
             mana = maxMana;
         }
+    }
+
+    // healing is taking negative damage
+    public void ChangeHealth(int damage)
+    {
+        health -= damage;
+        Debug.Log(health);
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        } else if(health <= 0)
+        {
+            PlayerDeath();
+        }
+    }
+
+    private void PlayerDeath()
+    {
+        throw new NotImplementedException();
     }
 }

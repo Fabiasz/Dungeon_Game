@@ -8,17 +8,20 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject crossHair;
     public GameObject boltPrefab;
+    public GameObject weapon1, weapon2;
     private float boltCooldown = 0;
     private Rigidbody2D rb;
+    private PlayerStats stats;
     private Vector3 currentMovement;
 
-    public float movementSpeed;
+    //public float movementSpeed;
     public float boltVelocity = 7.0f;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<PlayerStats>();
     }
 
     private void Update()
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
 
         //GetComponent<Rigidbody2D>().velocity = movement * movementSpeed;
-        return movement * movementSpeed * Time.deltaTime;
+        return movement * stats.movementSpeed * Time.deltaTime;
     }
 
     private void AimAndShoot()
@@ -53,17 +56,5 @@ public class PlayerController : MonoBehaviour
         Vector3 aim = Input.mousePosition;
         aim = Camera.main.ScreenToWorldPoint(aim);
         crossHair.transform.position = new Vector2(aim.x, aim.y);
-
-        Vector2 aimDirection = (aim - transform.position);
-        aimDirection.Normalize();
-        if (Input.GetButton("Fire1") && boltCooldown <= 0)
-        {
-            GameObject bolt = Instantiate(boltPrefab, transform.position, Quaternion.identity);
-            bolt.GetComponent<Rigidbody2D>().velocity = boltVelocity * aimDirection;
-            bolt.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg);
-            Destroy(bolt, 1.35f);
-            boltCooldown = 0.2f;
-        }
-        boltCooldown -= Time.deltaTime;
     }
 }

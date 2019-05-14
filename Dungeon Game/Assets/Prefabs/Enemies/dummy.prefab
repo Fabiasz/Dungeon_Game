@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d104ed4b12da2f04c9c39efae0603ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 5
   movementSpeed: 0
   touchDamage: 1
   touchKnockback: 5
