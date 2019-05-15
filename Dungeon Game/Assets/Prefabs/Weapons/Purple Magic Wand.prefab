@@ -96,8 +96,10 @@ MonoBehaviour:
   distanceFromPlayer: 0.5
   boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
     type: 3}
-  boltVelocity: 10
   bulletWeaponDistance: 0.4
+  bulletVelocity: 10
+  timeBetweenBullets: 0.2
+  bulletLifeTime: 1.5
 --- !u!58 &4907780167621199366
 CircleCollider2D:
   m_ObjectHideFlags: 0
