@@ -114,7 +114,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6689697889259568396}
-  - {fileID: 5026217081877300390}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,9 +247,10 @@ MonoBehaviour:
   crossHair: {fileID: 6225756217371608609}
   boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
     type: 3}
-  weapon1: {fileID: 0}
-  weapon2: {fileID: 0}
-  boltVelocity: 10
+  weapon1Prefab: {fileID: 5344388029147352101, guid: a01a4c03a35afaf42b2b720f3b24ca54,
+    type: 3}
+  weapon2Prefab: {fileID: 5344388029147352101, guid: 582dc3985008c374ca9553e157c89c8e,
+    type: 3}
 --- !u!114 &2826247925814070923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,78 +281,3 @@ MonoBehaviour:
   mana: 0
   manaRegen: 20
   movementSpeed: 6
---- !u!1001 &7657889285795772583
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6639722452393617005}
-    m_Modifications:
-    - target: {fileID: 5344388029147352101, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_Name
-      value: Purple Magic Wand
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a01a4c03a35afaf42b2b720f3b24ca54, type: 3}
---- !u!4 &5026217081877300390 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3424702146647194625, guid: a01a4c03a35afaf42b2b720f3b24ca54,
-    type: 3}
-  m_PrefabInstance: {fileID: 7657889285795772583}
-  m_PrefabAsset: {fileID: 0}

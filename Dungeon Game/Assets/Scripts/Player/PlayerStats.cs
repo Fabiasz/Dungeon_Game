@@ -22,6 +22,12 @@ public class PlayerStats : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ManaRegeneration();
+        
+    }
+
+    private void ManaRegeneration()
+    {
         mana += Time.fixedDeltaTime * manaRegen;
         if (mana > maxMana)
         {
