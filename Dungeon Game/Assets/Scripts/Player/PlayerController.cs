@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
         weapon1.GetComponent<CircleCollider2D>().enabled = false;
         weapon2 = Instantiate(weapon2Prefab, transform);
         weapon2.SetActive(false);
-        weapon1.GetComponent<Weapon>().enabled = true;
-        weapon1.GetComponent<CircleCollider2D>().enabled = false;
+        weapon2.GetComponent<Weapon>().enabled = true;
+        weapon2.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     private void Start()
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             {
                 weapon2Prefab = newWeapon;
                 Destroy(newWeapon);
-                newWeapon = Instantiate(weapon2, transform.position, Quaternion.identity);
+                newWeapon = Instantiate(weapon2, transform.position, Quaternion.identity);  
                 newWeapon.GetComponent<Weapon>().enabled = false;
                 newWeapon.GetComponent<CircleCollider2D>().enabled = true;
                 Destroy(weapon2);
