@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     //public GameObject boltPrefab;
     public GameObject weapon1Prefab, weapon2Prefab;
     private GameObject weapon1, weapon2;
+    public GameObject newWeapon;
     //private float boltCooldown = 0;
     private Rigidbody2D rb;
     private PlayerStats stats;
     private Vector3 currentMovement;
+    private int activeWeapon = 1;
 
     //public float movementSpeed;
     //public float boltVelocity = 7.0f;
@@ -21,11 +23,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         weapon1 = Instantiate(weapon1Prefab, transform);
-        //weapon1.transform.SetParent(transform);
         weapon1.SetActive(true);
+        weapon1.GetComponent<Weapon>().enabled = true;
+        weapon1.GetComponent<CircleCollider2D>().enabled = false;
         weapon2 = Instantiate(weapon2Prefab, transform);
-        //weapon2.transform.SetParent(transform);
         weapon2.SetActive(false);
+        weapon1.GetComponent<Weapon>().enabled = true;
+        weapon1.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     private void Start()
@@ -40,6 +44,37 @@ public class PlayerController : MonoBehaviour
         currentMovement = MoveCharacter();
         AimAndShoot();
         ChangeWeapon();
+        PickupWeapon();
+    }
+
+    private void PickupWeapon()
+    {
+        if (Input.GetButtonDown("Interact") && newWeapon)
+        {
+            if (activeWeapon == 1)
+            {
+                weapon1Prefab = newWeapon;
+                Destroy(newWeapon);
+                newWeapon = Instantiate(weapon1, transform.position, Quaternion.identity);
+                newWeapon.GetComponent<Weapon>().enabled = false;
+                newWeapon.GetComponent<CircleCollider2D>().enabled = true;
+                Destroy(weapon1);
+                weapon1 = Instantiate(weapon1Prefab, transform);
+                weapon1.GetComponent<Weapon>().enabled = true;
+                weapon1.GetComponent<CircleCollider2D>().enabled = false;
+            } else
+            {
+                weapon1Prefab = newWeapon;
+                Destroy(newWeapon);
+                newWeapon = Instantiate(weapon1, transform.position, Quaternion.identity);
+                newWeapon.GetComponent<Weapon>().enabled = false;
+                newWeapon.GetComponent<CircleCollider2D>().enabled = true;
+                Destroy(weapon1);
+                weapon1 = Instantiate(weapon1Prefab, transform);
+                weapon1.GetComponent<Weapon>().enabled = true;
+                weapon1.GetComponent<CircleCollider2D>().enabled = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -78,11 +113,32 @@ public class PlayerController : MonoBehaviour
             {
                 weapon1.SetActive(false);
                 weapon2.SetActive(true);
+                activeWeapon = 2;
             }
             else
             {
                 weapon2.SetActive(false);
                 weapon1.SetActive(true);
+                activeWeapon = 1;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon"))
+        {
+            newWeapon = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon"))
+        {
+            if(collision.gameObject == newWeapon)
+            {
+                newWeapon = null;
             }
         }
     }

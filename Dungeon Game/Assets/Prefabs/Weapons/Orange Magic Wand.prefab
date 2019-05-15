@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3424702146647194625}
   - component: {fileID: 8197824911550904664}
   - component: {fileID: 5713591443567337921}
+  - component: {fileID: 1324430764956424653}
   m_Layer: 9
   m_Name: Orange Magic Wand
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,19 @@ MonoBehaviour:
     type: 3}
   boltVelocity: 10
   bulletWeaponDistance: 0.4
+--- !u!58 &1324430764956424653
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344388029147352101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.65
