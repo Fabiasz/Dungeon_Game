@@ -11,22 +11,30 @@ public class RayCastSimple : MonoBehaviour
     private Vector2 direction;
     [HideInInspector]
     public bool seePlayer = false;
-    // Start is called before the first frame update
+    private LayerMask layerMask;
+    private ContactFilter2D contactFilter;
+
+    private void Awake()
+    {
+        
+        
+    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lastPlayerPosition.x = transform.position.x;
         lastPlayerPosition.y = transform.position.y;
         Physics2D.queriesStartInColliders = false;
-        //LayerMask layerMask = LayerMask
+        
+        layerMask = LayerMask.GetMask("Terrain", "Player");
+        Debug.Log("layerMask" + layerMask.ToString());
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         direction = player.transform.position - transform.position;
-        hitInfo = Physics2D.Raycast(transform.position, direction);
-        //Physics2D.Raycast()
+        hitInfo = Physics2D.Raycast(transform.position, direction, Mathf.Infinity, layerMask);
         if (hitInfo.collider != null)
         {
             
