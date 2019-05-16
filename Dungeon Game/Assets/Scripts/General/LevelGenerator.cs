@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour
 {
     enum gridSpace { empty, floor, wall };
     gridSpace[,] grid;
-    enum gridUnits { empty, player, enemy1, enemy2 };
+    enum gridUnits { empty, player, enemy, chest };
     gridUnits[,] units;
     int roomHeight, roomWidth;
     const int mapSize = 40;
@@ -29,7 +29,8 @@ public class LevelGenerator : MonoBehaviour
     int maxWalkers = 10;
     [Range(0.0f, 1.0f)]
     public float percentToFill = 0.2f;
-    public GameObject wallObject, floorObject, playerObject, enemy1Object, enemy2Object, portalObject;
+    public GameObject playerObject, portalObject;
+    public GameObject[] enemyObjects, chestObjects, floorObjects, wallObjects;
 
     private void Start()
     {
@@ -149,6 +150,14 @@ public class LevelGenerator : MonoBehaviour
             iterations++;
         } while (iterations < 100000);
 
+        foreach (Walker myWalker in walkers)
+        {
+            if (units[(int)myWalker.pos.x, (int)myWalker.pos.y] != gridUnits.player)
+            {
+                units[(int)myWalker.pos.x, (int)myWalker.pos.y] = gridUnits.chest;
+            }
+
+        }
     }
 
     private void CreateSafetyZone()
@@ -181,11 +190,7 @@ public class LevelGenerator : MonoBehaviour
     {
         if (Random.value < 0.7f)
         {
-            units[(int)walker.pos.x, (int)walker.pos.y] = gridUnits.enemy1;
-        }
-        else
-        {
-            units[(int)walker.pos.x, (int)walker.pos.y] = gridUnits.enemy2;
+            units[(int)walker.pos.x, (int)walker.pos.y] = gridUnits.enemy;
         }
     }
 
@@ -205,7 +210,7 @@ public class LevelGenerator : MonoBehaviour
         int count = 0;
         foreach (gridUnits unit in units)
         {
-            if (unit == gridUnits.enemy1 || unit == gridUnits.enemy2)
+            if (unit == gridUnits.enemy)
                 count++;
         }
         return count;
@@ -254,11 +259,11 @@ public class LevelGenerator : MonoBehaviour
                         break;
                     case gridSpace.floor:
                         //Debug.Log("(" + x + "," + y + "): floor");
-                        Spawn(x, y, floorObject);
+                        Spawn(x, y, SelectRandomObject(floorObjects));
                         break;
                     case gridSpace.wall:
                         //Debug.Log("(" + x + "," + y + "): wall");
-                        Spawn(x, y, wallObject);
+                        Spawn(x, y, SelectRandomObject(wallObjects));
                         break;
                 }
 
@@ -272,17 +277,22 @@ public class LevelGenerator : MonoBehaviour
                         //MoveObject(x, y, playerObject);
                         Spawn(x, y, portalObject);
                         break;
-                    case gridUnits.enemy1:
+                    case gridUnits.enemy:
                         //Debug.Log("(" + x + "," + y + "): wall");
-                        Spawn(x, y, enemy1Object);
+                        Spawn(x, y, SelectRandomObject(enemyObjects));
                         break;
-                    case gridUnits.enemy2:
-                        //Debug.Log("(" + x + "," + y + "): wall");
-                        Spawn(x, y, enemy2Object);
+                    case gridUnits.chest:
+                        Spawn(x, y, SelectRandomObject(chestObjects));
                         break;
                 }
             }
         }
+    }
+
+    private GameObject SelectRandomObject(GameObject[] objects)
+    {
+        int index = Random.Range(0, enemyObjects.Length);
+        return objects[index];
     }
 
     private void Spawn(int x, int y, GameObject objectToSpawn)

@@ -47,15 +47,19 @@ MonoBehaviour:
   chanceWalkerSpawn: 0.05
   chanceWalkerDestroy: 0.05
   percentToFill: 0.2
-  wallObject: {fileID: 5277761146085241941, guid: 15daacbab38ddd04188f6728639cd472,
-    type: 3}
-  floorObject: {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8,
-    type: 3}
   playerObject: {fileID: 6639722452393616992, guid: 663b4b230a31a3146a134a84e3ad6d6b,
-    type: 3}
-  enemy1Object: {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01,
-    type: 3}
-  enemy2Object: {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01,
     type: 3}
   portalObject: {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8,
     type: 3}
+  enemyObjects:
+  - {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01, type: 3}
+  - {fileID: 7817138071061297252, guid: 61c7e972303f63044b11d47838355b0e, type: 3}
+  chestObjects:
+  - {fileID: 5344388029147352101, guid: 582dc3985008c374ca9553e157c89c8e, type: 3}
+  - {fileID: 5344388029147352101, guid: a01a4c03a35afaf42b2b720f3b24ca54, type: 3}
+  floorObjects:
+  - {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8, type: 3}
+  - {fileID: 5511247955930613388, guid: d36cd838205dcce46b9e35f6b15d2aeb, type: 3}
+  wallObjects:
+  - {fileID: 5277761146085241941, guid: 15daacbab38ddd04188f6728639cd472, type: 3}
+  - {fileID: 5277761146085241941, guid: 070891297a8391a44a8ffb06da164d1d, type: 3}
