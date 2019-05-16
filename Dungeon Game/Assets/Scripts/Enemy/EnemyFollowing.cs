@@ -17,14 +17,21 @@ public class EnemyFollowing : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position , player.position ) > stopDist)
+       // FollowPlayer();
+    }
+
+    public void FollowPlayer()
+    {
+        if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
-            
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed *  Time.deltaTime);
-        }else if(Vector2.Distance(transform.position, player.position) < stopDist   && Vector2.Distance(transform.position, player.position) > retreatDist)
+
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
+        else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
         {
             transform.position = this.transform.position;
-        } else if(Vector2.Distance(transform.position, player.position) < retreatDist)
+        }
+        else if (Vector2.Distance(transform.position, player.position) < retreatDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
