@@ -96,10 +96,13 @@ MonoBehaviour:
   distanceFromPlayer: 0.5
   boltPrefab: {fileID: 1852229218409806372, guid: 289d42f760d94144999706577d3fcb24,
     type: 3}
+  bulletsPerShot: 5
+  widthAngle: 180
   bulletWeaponDistance: 0.4
   bulletVelocity: 10
   timeBetweenBullets: 0.2
   bulletLifeTime: 1.5
+  manaPerShot: 20
 --- !u!58 &1324430764956424653
 CircleCollider2D:
   m_ObjectHideFlags: 0
