@@ -46,11 +46,11 @@ MonoBehaviour:
   chanceWalkerChangeDir: 0.5
   chanceWalkerSpawn: 0.05
   chanceWalkerDestroy: 0.05
-  percentToFill: 0.2
-  playerObject: {fileID: 6639722452393616992, guid: 663b4b230a31a3146a134a84e3ad6d6b,
+  percentToFill: 0.1
+  portalObject: {fileID: 2033105513263452641, guid: 7bfc43e05b82e3849ad2f3329c821204,
     type: 3}
-  portalObject: {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8,
-    type: 3}
+  nextScene: 
+  lastSceneWithPlayer: 0
   enemyObjects:
   - {fileID: 7817138071061297252, guid: 6eb0309935b116d4d9eeefde206dad01, type: 3}
   - {fileID: 7817138071061297252, guid: 61c7e972303f63044b11d47838355b0e, type: 3}

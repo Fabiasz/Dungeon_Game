@@ -29,7 +29,10 @@ public class LevelGenerator : MonoBehaviour
     int maxWalkers = 10;
     [Range(0.0f, 1.0f)]
     public float percentToFill = 0.2f;
-    public GameObject playerObject, portalObject;
+    //private GameObject playerObject;
+    public GameObject portalObject;
+    public string nextScene;
+    public bool lastSceneWithPlayer = false;
     public GameObject[] enemyObjects, chestObjects, floorObjects, wallObjects;
 
     private void Start()
@@ -276,6 +279,14 @@ public class LevelGenerator : MonoBehaviour
                         //Debug.Log( "(" + x + "," + y + "): player");
                         //MoveObject(x, y, playerObject);
                         Spawn(x, y, portalObject);
+                        GameObject portal = GameObject.FindGameObjectWithTag("Portal");
+                        portal.GetComponent<SpriteRenderer>().enabled = false;
+                        portal.GetComponent<BoxCollider2D>().enabled = false;
+                        portal.GetComponent<SceneLoader>().nextScene = nextScene;
+                        portal.GetComponent<SceneLoader>().lastSceneWithPlayer = lastSceneWithPlayer;
+
+                        GameObject player = GameObject.FindGameObjectWithTag("Player");
+                        player.transform.position = new Vector3(0, 0, 0);
                         break;
                     case gridUnits.enemy:
                         //Debug.Log("(" + x + "," + y + "): wall");
@@ -303,10 +314,13 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
-    /*
+    
     private void MoveObject(int x, int y, GameObject objectToMove)
     {
-        objectToMove.transform.position = new Vector3(x+ 300.0f, y+ 500.0f, 0.0f);
+        Vector2 offset = roomSizeWorldUnits / 2.0f;
+        Vector2 movePos = new Vector2(x, y) * worldUnitsInOneGridCell - offset;
+        objectToMove.transform.position = movePos;
     }
-    */
+    
+    
 }
