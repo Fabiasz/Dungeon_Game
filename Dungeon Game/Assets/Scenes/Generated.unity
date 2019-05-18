@@ -112,6 +112,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38007696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 298701187734698824, guid: 3ca3de0a666596f48b32826a98cf166d,
+    type: 3}
+  m_PrefabInstance: {fileID: 298701186887565420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &38007701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38007696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3411f6df0844c34cb0424fc64b4eaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCS: 0
+  portalObject: {fileID: 2033105513263452641, guid: 7bfc43e05b82e3849ad2f3329c821204,
+    type: 3}
 --- !u!4 &628318288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6639722452393617005, guid: 663b4b230a31a3146a134a84e3ad6d6b,
@@ -423,5 +444,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6568640099907047771, guid: 0c7a348aea4a8374fbc4d82e6530e71f,
+        type: 3}
+      propertyPath: portalObject
+      value: 
+      objectReference: {fileID: 5511247955930613388, guid: 99d49900b067d0f4783c5bc0ea7bd0e8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7a348aea4a8374fbc4d82e6530e71f, type: 3}
