@@ -245,12 +245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6639722452393617007}
   crossHair: {fileID: 6225756217371608609}
-  boltPrefab: {fileID: 1852229218409806372, guid: 1b959712d0f7eae4080246e33f15b83f,
-    type: 3}
   weapon1Prefab: {fileID: 5344388029147352101, guid: a01a4c03a35afaf42b2b720f3b24ca54,
     type: 3}
   weapon2Prefab: {fileID: 5344388029147352101, guid: 582dc3985008c374ca9553e157c89c8e,
     type: 3}
+  newWeapon: {fileID: 0}
 --- !u!114 &2826247925814070923
 MonoBehaviour:
   m_ObjectHideFlags: 0
