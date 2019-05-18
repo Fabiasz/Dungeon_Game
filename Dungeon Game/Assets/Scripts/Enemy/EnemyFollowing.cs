@@ -12,6 +12,7 @@ public class EnemyFollowing : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Hellow World");
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = transform.gameObject.GetComponent<Animator>();
     }
