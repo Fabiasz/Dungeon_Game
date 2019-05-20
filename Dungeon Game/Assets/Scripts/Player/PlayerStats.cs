@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 12;
     [HideInInspector]
     public int health;
     public float maxMana = 100f;
