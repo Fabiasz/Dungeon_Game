@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     private bool firePressed = false;
     public GameObject boltPrefab;
     public int bulletsPerShot = 1;
+    [Range(0, 360)]
     public float widthAngle = 0;
     private float[] angles;
     public float bulletWeaponDistance = 0.1f;
