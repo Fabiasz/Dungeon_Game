@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class SceneLoader : MonoBehaviour
             {
                 DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Player"));
             }
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(nextScene);
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5713591443567337921}
   - component: {fileID: 4907780167621199366}
   m_Layer: 14
-  m_Name: Blue
+  m_Name: Blue Mini Wand
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

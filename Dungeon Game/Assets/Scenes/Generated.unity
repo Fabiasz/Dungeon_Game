@@ -705,5 +705,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5511247955930613388, guid: d9a624cb2eace204686c4bd63892ee28,
         type: 3}
+    - target: {fileID: 6568640099907047771, guid: 0c7a348aea4a8374fbc4d82e6530e71f,
+        type: 3}
+      propertyPath: enemyObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1602819679, guid: 07ad5c937aba6f64db063f71f85bb417,
+        type: 3}
+    - target: {fileID: 6568640099907047771, guid: 0c7a348aea4a8374fbc4d82e6530e71f,
+        type: 3}
+      propertyPath: nextScene
+      value: Victory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568640099907047771, guid: 0c7a348aea4a8374fbc4d82e6530e71f,
+        type: 3}
+      propertyPath: lastSceneWithPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7a348aea4a8374fbc4d82e6530e71f, type: 3}
