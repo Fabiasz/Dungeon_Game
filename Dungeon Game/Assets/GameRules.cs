@@ -6,7 +6,13 @@ public class GameRules : MonoBehaviour
 {
     public int NPCS=0;
     public GameObject  portalObject;
-    public PlayerStats playerStats;
+    private PlayerStats playerStats;
+
+
+    private void Start()
+    {
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+    }
     
     void Update()
     {
@@ -29,13 +35,13 @@ public class GameRules : MonoBehaviour
     void LosingLoading()
     {
         
-        //if (playerStats.health == 0)
-       // {
+      if (playerStats.health == 0)
+        {
 
-        //    UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+          UnityEngine.SceneManagement.SceneManager.LoadScene(4);
             
             
-       // }
+       }
     }
     private  void EnemyCounter()
     {
