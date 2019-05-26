@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public int maxHealth = 5;
-    public float movementSpeed = 2;
+    public float movementSpeed = 1;
     public int touchDamage = 1;
     public float touchKnockback = 5;
 

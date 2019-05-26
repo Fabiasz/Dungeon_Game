@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBoltCollision : MonoBehaviour
 {
+    public int damage = 2;
+
     bool isRotate = false;
     bool isVelocity = false;
     
@@ -49,6 +51,10 @@ public class EnemyBoltCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerStats>().ChangeHealth(damage);
+        }
         Destroy(gameObject);
     }
 

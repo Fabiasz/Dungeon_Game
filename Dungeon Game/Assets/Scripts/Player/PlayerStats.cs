@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int maxHealth = 12;
+    public int maxHealth = 10;
     [HideInInspector]
     public int health;
     public float maxMana = 100f;
@@ -51,6 +52,7 @@ public class PlayerStats : MonoBehaviour
 
     private void PlayerDeath()
     {
-        throw new NotImplementedException();
+        //todo: make real losing scenario
+        SceneManager.LoadScene("Victory");
     }
 }

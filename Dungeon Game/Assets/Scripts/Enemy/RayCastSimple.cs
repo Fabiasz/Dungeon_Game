@@ -7,7 +7,7 @@ public class RayCastSimple : MonoBehaviour
     private RaycastHit2D hitInfo;
     private GameObject player;
     [HideInInspector]
-    public Vector2 lastPlayerPosition;
+    public Vector3 lastPlayerPosition = new Vector3(0,0,0);
     private Vector2 direction;
     [HideInInspector]
     public bool seePlayer = false;
@@ -40,10 +40,10 @@ public class RayCastSimple : MonoBehaviour
             
             if (hitInfo.collider.tag == "Player")
             {
-                Debug.Log("Collision");
+                //Debug.Log("Collision");
                 lastPlayerPosition.x = player.transform.position.x;
                 lastPlayerPosition.y = player.transform.position.y;
-                Debug.Log("lastPlayerPosition: " + lastPlayerPosition);
+                //Debug.Log("lastPlayerPosition: " + lastPlayerPosition);
                 
                 //Debug.DrawLine(transform.position, hitInfo.point, Color.red);
                 Debug.DrawLine(transform.position, player.transform.position, Color.green);
