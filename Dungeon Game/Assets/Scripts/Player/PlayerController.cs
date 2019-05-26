@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject boltPrefab;
     public GameObject weapon1Prefab, weapon2Prefab;
     private GameObject weapon1, weapon2;
+    [HideInInspector]
     public GameObject newWeapon;
     //private float boltCooldown = 0;
     private Rigidbody2D rb;

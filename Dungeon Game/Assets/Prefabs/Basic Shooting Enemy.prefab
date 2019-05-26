@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 3986315702965322799}
   - component: {fileID: 5488403364304039953}
   - component: {fileID: 7515357084074603536}
+  - component: {fileID: 5753028685154686896}
+  - component: {fileID: 3185081937183422959}
   m_Layer: 10
-  m_Name: dummy 1
+  m_Name: Basic Shooting Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +156,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d104ed4b12da2f04c9c39efae0603ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  movementSpeed: 0
+  maxHealth: 6
+  movementSpeed: 1
   touchDamage: 1
   touchKnockback: 5
   health: 0
+--- !u!114 &5753028685154686896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817138071061297252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db9ab4330174f4baed08d09f203499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minPlayerDistance: 0
+  maxPlayerDistance: 0
+  shootCooldown: 1.5
+  boltPrefab: {fileID: 1852229218409806372, guid: 887f94584acc600418afb69e2f49d9e2,
+    type: 3}
+  boltEnemyDistance: 0.4
+  bulletLifeTime: 5
+  bulletVelocity: 2
+--- !u!114 &3185081937183422959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817138071061297252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a066bb1fbaa713e4ca2fbf47a57ccea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPlayerPosition: {x: 0, y: 0, z: 0}
+  seePlayer: 0
