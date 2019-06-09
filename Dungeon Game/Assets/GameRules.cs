@@ -38,7 +38,9 @@ public class GameRules : MonoBehaviour
       if (playerStats.health == 0)
         {
 
-          UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+
+
+          UnityEngine.SceneManagement.SceneManager.LoadScene("Failure");
             
             
        }

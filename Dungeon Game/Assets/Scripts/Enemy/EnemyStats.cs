@@ -9,7 +9,7 @@ public class EnemyStats : MonoBehaviour
     public float movementSpeed = 1;
     public int touchDamage = 1;
     public float touchKnockback = 5;
-
+    AudioSource audioData;
     [HideInInspector]
     public int health;
 
@@ -23,6 +23,7 @@ public class EnemyStats : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        audioData = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -42,6 +43,7 @@ public class EnemyStats : MonoBehaviour
     public void ChangeHealth(int damage)
     {
         health -= damage;
+        audioData.Play(0);
         Debug.Log("enemy hit health: " + health);
         if (health > maxHealth)
         {

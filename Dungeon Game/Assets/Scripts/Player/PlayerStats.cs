@@ -14,11 +14,13 @@ public class PlayerStats : MonoBehaviour
     public float mana;
     public float manaRegen = 20f;
     public float movementSpeed = 6f;
+    AudioSource audioData;
 
     private void Awake()
     {
         health = maxHealth;
         mana = maxMana;
+        audioData = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -40,6 +42,7 @@ public class PlayerStats : MonoBehaviour
     public void ChangeHealth(int damage)
     {
         health -= damage;
+        audioData.Play(0);
         Debug.Log(health);
         if (health > maxHealth)
         {
