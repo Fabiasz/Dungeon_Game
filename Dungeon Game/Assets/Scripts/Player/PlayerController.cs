@@ -59,10 +59,18 @@ public class PlayerController : MonoBehaviour
                 newWeapon = Instantiate(weapon1, transform.position, Quaternion.identity);
                 newWeapon.GetComponent<Weapon>().enabled = false;
                 newWeapon.GetComponent<CircleCollider2D>().enabled = true;
+                if (newWeapon.GetComponent<Animator>())
+                {
+                    newWeapon.GetComponent<Animator>().enabled = true;
+                }
                 Destroy(weapon1);
                 weapon1 = Instantiate(weapon1Prefab, transform);
                 weapon1.GetComponent<Weapon>().enabled = true;
                 weapon1.GetComponent<CircleCollider2D>().enabled = false;
+                if (weapon1.GetComponent<Animator>())
+                {
+                    weapon1.GetComponent<Animator>().enabled = true;
+                }
             } else
             {
                 weapon2Prefab = newWeapon;
@@ -70,10 +78,18 @@ public class PlayerController : MonoBehaviour
                 newWeapon = Instantiate(weapon2, transform.position, Quaternion.identity);  
                 newWeapon.GetComponent<Weapon>().enabled = false;
                 newWeapon.GetComponent<CircleCollider2D>().enabled = true;
+                if (newWeapon.GetComponent<Animator>())
+                {
+                    newWeapon.GetComponent<Animator>().enabled = true;
+                }
                 Destroy(weapon2);
                 weapon2 = Instantiate(weapon2Prefab, transform);
                 weapon2.GetComponent<Weapon>().enabled = true;
                 weapon2.GetComponent<CircleCollider2D>().enabled = false;
+                if (weapon2.GetComponent<Animator>())
+                {
+                    weapon2.GetComponent<Animator>().enabled = true;
+                }
             }
         }
     }

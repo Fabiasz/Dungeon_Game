@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Weapon : MonoBehaviour
     [Range(0, 360)]
     public float widthAngle = 0;
     private float[] angles;
+    [Range(0, 360)]
+    public float spreadAngle = 0;
     public float bulletWeaponDistance = 0.1f;
     public float bulletVelocity = 5;
     public float timeBetweenBullets = 0.2f;
@@ -31,7 +34,6 @@ public class Weapon : MonoBehaviour
         weaponSprite = gameObject.GetComponent<Transform>();
         player = transform.root.GetComponentInChildren<Transform>();
         playerStats = player.GetComponent<PlayerStats>();
-        //player = gameObject.GetComponent<Transform>();
 
         angles = new float[bulletsPerShot];
         if (bulletsPerShot == 1)
@@ -61,11 +63,11 @@ public class Weapon : MonoBehaviour
     {
         if (firePressed && boltCooldown <= 0 && playerStats.mana >= manaPerShot)
         {
+            float spread = (Random.value - 0.5f);
             for (int i = 0; i < bulletsPerShot; i++)
             {
                 GameObject bolt = Instantiate(boltPrefab, transform.position + mouseVector * bulletWeaponDistance, Quaternion.identity);
-                //Vector3 direction = mouseVector + new Vector3(Mathf.Cos(Mathf.Deg2Rad * angles[i]), Mathf.Sin(Mathf.Deg2Rad * angles[i]));
-                Vector3 direction = Quaternion.Euler(0, 0, angles[i]) * mouseVector;
+                Vector3 direction = Quaternion.Euler(0, 0, angles[i] + spread * spreadAngle) * mouseVector;
                 bolt.GetComponent<Rigidbody2D>().velocity = bulletVelocity * direction;
                 bolt.transform.Rotate(0.0f, 0.0f, angles[i] + Mathf.Atan2(mouseVector.y, mouseVector.x) * Mathf.Rad2Deg);
                 Destroy(bolt, bulletLifeTime);

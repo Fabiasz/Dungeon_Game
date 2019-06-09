@@ -98,9 +98,10 @@ MonoBehaviour:
     type: 3}
   bulletsPerShot: 3
   widthAngle: 20
+  spreadAngle: 2
   bulletWeaponDistance: 0.4
-  bulletVelocity: 15
-  timeBetweenBullets: 1
+  bulletVelocity: 12
+  timeBetweenBullets: 0.5
   bulletLifeTime: 2
   manaPerShot: 20
 --- !u!58 &1324430764956424653

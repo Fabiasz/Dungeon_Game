@@ -53,6 +53,6 @@ public class PlayerStats : MonoBehaviour
     private void PlayerDeath()
     {
         //todo: make real losing scenario
-        SceneManager.LoadScene("Victory");
+        SceneManager.LoadScene("Failure");
     }
 }

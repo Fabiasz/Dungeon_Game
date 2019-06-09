@@ -22,4 +22,11 @@ public class MagicBolt : PlayerBolt
         Destroy(this.gameObject);
     }
     */
+    private void Start()
+    {
+        if (this.GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            this.GetComponent<SpriteRenderer>().flipY = true;
+        }
+    }
 }

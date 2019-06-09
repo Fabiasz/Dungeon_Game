@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8197824911550904664}
   - component: {fileID: 5713591443567337921}
   - component: {fileID: 4907780167621199366}
+  - component: {fileID: 2739729512879396883}
   m_Layer: 14
-  m_Name: Blue Mini Wand
+  m_Name: Thunderbolt
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -326399527
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7bbd7bb1318e09042be5c43110cdbf21, type: 3}
+  m_Sprite: {fileID: 21300008, guid: af822761a14d87b43943d9d74e9b6220, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,16 +95,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromPlayer: 0.5
-  boltPrefab: {fileID: 1852229218409806372, guid: 33e2268d90893ab49a7e0cd40c20a5b6,
+  boltPrefab: {fileID: 1852229218409806372, guid: ea4fc27b7317ea44fb5481f1f91c3f41,
     type: 3}
   bulletsPerShot: 1
   widthAngle: 0
-  spreadAngle: 0
-  bulletWeaponDistance: 0.35
-  bulletVelocity: 10
-  timeBetweenBullets: 0.2
-  bulletLifeTime: 1.5
-  manaPerShot: 7
+  spreadAngle: 10
+  bulletWeaponDistance: 0.4
+  bulletVelocity: 40
+  timeBetweenBullets: 0.5
+  bulletLifeTime: 1
+  manaPerShot: 15
 --- !u!58 &4907780167621199366
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120,3 +121,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.65
+--- !u!95 &2739729512879396883
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344388029147352101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e080ff9b92d6a3b429bafe2885e2f3a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

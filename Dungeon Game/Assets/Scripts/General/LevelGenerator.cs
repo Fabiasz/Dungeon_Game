@@ -302,8 +302,7 @@ public class LevelGenerator : MonoBehaviour
 
     private GameObject SelectRandomObject(GameObject[] objects)
     {
-        int index = Random.Range(0, enemyObjects.Length);
-        return objects[index];
+        return objects[Random.Range(0, objects.Length)];
     }
 
     private void Spawn(int x, int y, GameObject objectToSpawn)

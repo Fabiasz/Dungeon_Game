@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6303028913765164089}
   - component: {fileID: 949319346046958926}
   - component: {fileID: 7794017876618409582}
+  - component: {fileID: 3218031121974092594}
   m_Layer: 11
-  m_Name: Blue Mini Missle
+  m_Name: Thunderbolt Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -326399527
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb50270d7b4d7b6478b14b68da9e6c8e, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 1dcfa60de883f254aa5e08ddb27d51df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,15 +96,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.12566371
+  m_Mass: 0.17268583
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 100
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 7132a2a8cea285142a5126be516ac4f9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!95 &6303028913765164089
 Animator:
   serializedVersion: 3
@@ -114,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 1852229218409806372}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd5de8d095e159344b04270c579607e7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7fa057b75b44eb34f811a3f7ea62917a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -130,8 +131,8 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852229218409806372}
-  m_Enabled: 1
-  m_Density: 1
+  m_Enabled: 0
+  m_Density: 4
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -151,4 +152,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cae007ae3720f847b322c4ed66470d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 4
+--- !u!70 &3218031121974092594
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852229218409806372}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 632b4e0bf66e5aa42a920e2860c127e5, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.64, y: 0.3}
+  m_Direction: 1

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5344388029147352101
+--- !u!1 &1852229218409806372
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3424702146647194625}
-  - component: {fileID: 8197824911550904664}
-  - component: {fileID: 5713591443567337921}
-  - component: {fileID: 4907780167621199366}
-  m_Layer: 14
-  m_Name: Blue Mini Wand
-  m_TagString: Weapon
+  - component: {fileID: 6545661680669473240}
+  - component: {fileID: 8807836146572646006}
+  - component: {fileID: 8418997001582314762}
+  - component: {fileID: 3724190082923930023}
+  - component: {fileID: 1310335565467265388}
+  m_Layer: 11
+  m_Name: Necromancer Wand Bolt
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3424702146647194625
+--- !u!4 &6545661680669473240
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344388029147352101}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1852229218409806372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8197824911550904664
+--- !u!212 &8807836146572646006
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344388029147352101}
+  m_GameObject: {fileID: 1852229218409806372}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -326399527
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7bbd7bb1318e09042be5c43110cdbf21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2478b86f2fb7c244a14503af6f09508, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,42 +82,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5713591443567337921
+--- !u!50 &8418997001582314762
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852229218409806372}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.44186148
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &3724190082923930023
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852229218409806372}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: 0}
+  m_Size: {x: 0.0001, y: 0.75}
+  m_Direction: 1
+--- !u!114 &1310335565467265388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344388029147352101}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1852229218409806372}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ebb9e6fc5560444ab23805569a3a46, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c79cb068f4148749b6cb8eb1503a339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 0.5
-  boltPrefab: {fileID: 1852229218409806372, guid: 33e2268d90893ab49a7e0cd40c20a5b6,
-    type: 3}
-  bulletsPerShot: 1
-  widthAngle: 0
-  spreadAngle: 0
-  bulletWeaponDistance: 0.35
-  bulletVelocity: 10
-  timeBetweenBullets: 0.2
-  bulletLifeTime: 1.5
-  manaPerShot: 7
---- !u!58 &4907780167621199366
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344388029147352101}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.65
+  damage: 3
+  acceleration: 5
+  maxSpeed: 25

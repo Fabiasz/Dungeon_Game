@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5713591443567337921}
   - component: {fileID: 4907780167621199366}
   m_Layer: 14
-  m_Name: Blue Mini Wand
+  m_Name: Green Staff
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: -326399527
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7bbd7bb1318e09042be5c43110cdbf21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc840db6363e71f48ae504b6895a5008, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,16 +94,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromPlayer: 0.5
-  boltPrefab: {fileID: 1852229218409806372, guid: 33e2268d90893ab49a7e0cd40c20a5b6,
+  boltPrefab: {fileID: 1852229218409806372, guid: 41684500b901070429991b26ec227d5d,
     type: 3}
   bulletsPerShot: 1
   widthAngle: 0
-  spreadAngle: 0
-  bulletWeaponDistance: 0.35
-  bulletVelocity: 10
+  spreadAngle: 5
+  bulletWeaponDistance: 0.4
+  bulletVelocity: 6
   timeBetweenBullets: 0.2
   bulletLifeTime: 1.5
-  manaPerShot: 7
+  manaPerShot: 12
 --- !u!58 &4907780167621199366
 CircleCollider2D:
   m_ObjectHideFlags: 0
