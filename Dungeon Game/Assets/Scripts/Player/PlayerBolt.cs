@@ -6,9 +6,9 @@ public class PlayerBolt : MonoBehaviour
 {
     public int damage = 1;
     AudioSource audioData;
-    void Start()
+    void Awake()
     {
-        audioData = GetComponent<AudioSource>();
+        audioData = this.gameObject.GetComponent<AudioSource>();
         
     }
         void OnCollisionEnter2D(Collision2D col)
@@ -22,6 +22,7 @@ public class PlayerBolt : MonoBehaviour
            
 
         }
+
         Destroy(this.gameObject);
     }
 
