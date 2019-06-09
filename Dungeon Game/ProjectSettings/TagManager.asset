@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Portal
   - CrossHair
+  - Hearth
+  - AudioManager
   layers:
   - Default
   - TransparentFX

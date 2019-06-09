@@ -10,6 +10,8 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        GameObject AM = GameObject.FindGameObjectWithTag("AudioManager");
+        Destroy(AM);
         Cursor.visible = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         crossHair = GameObject.FindGameObjectWithTag("CrossHair").GetComponent<Transform>();
