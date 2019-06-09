@@ -11,9 +11,10 @@ public class MagicShatterBolt : PlayerBolt
     public int newBullets = 4;
     private bool ifCollided = false;
     private Vector3 bulletDirection;
-
+    AudioSource audioData;
     private void Start()
     {
+        audioData = GetComponent<AudioSource>();
         angles = new float[newBullets];
         for (int i = 0; i < newBullets; i++)
         {
@@ -23,6 +24,7 @@ public class MagicShatterBolt : PlayerBolt
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        audioData.Play(0);
         if (col.gameObject.tag == "Enemy")
         {
             EnemyStats stats = col.gameObject.GetComponent<EnemyStats>();

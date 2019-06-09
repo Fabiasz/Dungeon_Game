@@ -7,9 +7,10 @@ public class AccelerationBullet : PlayerBolt
     public float acceleration = 2;
     public float maxSpeed = 20;
     private Rigidbody2D rb;
-
+    AudioSource audioData;
     private void Start()
     {
+        audioData = GetComponent<AudioSource>();
         if (this.GetComponent<Rigidbody2D>().velocity.x < 0)
         {
             this.GetComponent<SpriteRenderer>().flipY = true;
@@ -31,6 +32,7 @@ public class AccelerationBullet : PlayerBolt
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        audioData.Play(0);
         if (col.gameObject.tag == "Enemy")
         {
             EnemyStats stats = col.gameObject.GetComponent<EnemyStats>();

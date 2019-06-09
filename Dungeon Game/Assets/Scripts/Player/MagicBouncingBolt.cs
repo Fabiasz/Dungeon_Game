@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class MagicBouncingBolt : PlayerBolt
 {
+    AudioSource audioData;
+    private void Start()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
+        audioData.Play(0);
         if (col.gameObject.tag == "Enemy")
         {
             EnemyStats stats = col.gameObject.GetComponent<EnemyStats>();
