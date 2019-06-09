@@ -40,7 +40,7 @@ public class GameRules : MonoBehaviour
 
 
 
-          UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+          UnityEngine.SceneManagement.SceneManager.LoadScene("Failure");
             
             
        }
