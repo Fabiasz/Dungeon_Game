@@ -673,7 +673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 24, y: -71}
+  m_AnchoredPosition: {x: -11, y: -61}
   m_SizeDelta: {x: -923.7, y: -489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813513868
@@ -993,7 +993,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: YOU LOOSE!!!
+  m_text: FAILURE!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 279cdbf42ce5412409fe58e1512c9ae4, type: 2}
   m_sharedMaterial: {fileID: 21959960882985444, guid: 279cdbf42ce5412409fe58e1512c9ae4,
@@ -1063,10 +1063,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -103.4198, w: 0}
   m_textInfo:
     textComponent: {fileID: 2100757114}
-    characterCount: 12
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
