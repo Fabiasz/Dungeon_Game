@@ -9,9 +9,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Slider Volume;
     public static AudioManager Instance;
+    bool isSlider = false;
     private void Awake()
     {
-        if (Instance == null)
+        if (GameObject.FindGameObjectWithTag("Slider"))
+            isSlider = true;
+            if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -30,8 +33,9 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Update()
-    {
-        bgc_music.volume = Volume.value;
+    {   
+        if(isSlider)
+         bgc_music.volume = Volume.value;
     }
 
 }
