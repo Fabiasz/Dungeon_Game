@@ -17,4 +17,9 @@ public class SCeneManager : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ControlMenu()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+    
 }

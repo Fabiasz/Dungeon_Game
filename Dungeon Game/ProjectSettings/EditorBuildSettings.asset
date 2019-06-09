@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: daadcc77ac6ecd644b41cee9141feb22
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/a71055bb06f3640418d5216db592b22f
+    path: 
     guid: a71055bb06f3640418d5216db592b22f
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 10.unity
     guid: 055af81b05abe1f45ad7c55b3db5dfb0
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 850ae0a39e9b3f54ebf1037b2fb51b41
   m_configObjects: {}
